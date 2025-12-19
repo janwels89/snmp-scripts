@@ -1,7 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Origin
-# https://exchange.nagios.org/directory/plugins/software/check_docker
+# Origin https://exchange.nagios.org/directory/plugins/software/check_docker
 
 ###[INFO]###############################################
 ## check_docker                                       ##

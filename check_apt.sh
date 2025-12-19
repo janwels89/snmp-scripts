@@ -2,15 +2,12 @@
 # SPDX-FileCopyrightText: 2025 Jan Welslau jan.welslau@gmail.com
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-###[INFO]###############################################
-## check_apt                                          ##
-## v1.0, modified on 2025-11-28                       ##
-## monitoring-plugin to check for apt updates         ##
-## bash rewrite of nagios-plugins/plugins/check_apt.c ##
-## written by Jan Welslau                             ##                             ##
-## GNU General Public License Version 3               ##
-########################################################
-
+########################################################################
+##  check_apt - Bash script to monitor available apt updates          ##
+##  Rewrite of nagios-plugins/plugins/check_apt.c                     ##
+##  Author: Jan Welslau               License: GPL v3                 ##
+##  Modified: 2025-11-28                                              ##
+########################################################################
 
 PROGNAME="check_apt"
 PACKAGES_WARNING=1
