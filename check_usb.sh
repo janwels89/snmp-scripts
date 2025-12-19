@@ -1,0 +1,41 @@
+#!/bin/bash
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Origin https://github.com/migcm/nagios-check_usb 
+
+man(){
+        echo -e "\n*******"
+        echo "Check if a USB is plug-in to a computer or server."
+        echo "To use this plugin it's necessary to have 'lsusb' installed on the machine where this script will be executed."
+        echo "The USB ID can be found by executing 'lsusb' on the command line. The TAG can be anything that allows you to remember what USB device it's (must not contain blanks or dashes)."
+        echo "The plugin will return CRITICAL status if one of the USB identifiers isn't found."
+        echo "*******"
+
+        echo -e "\n------- check_usb written by Miguel Calvo (ES), v1.1, 30.08.2018 -------\n"
+
+        echo -e "\nSyntax:"
+        echo -e "\tcheck_usb usbID[-TAG] [usbID[-TAG]]\n"
+        echo "Example: "
+        echo -e "\tcheck_usb 016e:0423 03ab:2312"
+        echo -e "\tcheck_usb 016e:0423-Webcam 03ab:2312"
+        echo -e "\t016e:0423-Micro 03ab:2312-Webcam 31ab:2812"
+}
+
+
+if [ $# -gt 0 ]
+then
+        for var in "$@"
+        do
+                arrIN=(${var//-/ })
+
+                if ! lsusb | grep ${arrIN[0]} > /dev/null ; then
+                        echo "CRITICAL - USB '$var' not found."
+                        exit 2
+                fi
+        done
+
+        usbsIN=$@
+        echo "OK - USB '${usbsIN// /\', \'}' is/are plugged in."
+        exit 0
+else
+        man
+fi
