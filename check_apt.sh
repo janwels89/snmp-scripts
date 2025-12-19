@@ -5,7 +5,8 @@
 ########################################################################
 ##  check_apt - Bash script to monitor available apt updates          ##
 ##  Rewrite of nagios-plugins/plugins/check_apt.c                     ##
-##  Author: Jan Welslau               License: GPL v3                 ##
+##  Author: Jan Welslau                                               ##
+## License: GPL v3                                                    ##
 ##  Modified: 2025-11-28                                              ##
 ########################################################################
 
